@@ -12,8 +12,12 @@ namespace Expense_Tracker.Models
         [Key]
         public int TransactionId { get; set; }
         //CategoryId
+        [Range(1 , int.MaxValue , ErrorMessage ="Please Select a Category.")]
         public int CategoryId { get; set; }
         public Category? Category { get; set; }
+        
+        [Range(1, int.MaxValue, ErrorMessage = "Amount Should be Greater than 0.")]
+
         public int Amount { get; set; }
         public string Note { get; set; }
 
